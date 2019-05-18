@@ -1,0 +1,477 @@
+---
+title: "R Markdown"
+author: "Shabnam Sheikhha, Matin Khajavi <br> <br> Ali Sharifi Zarchi"
+date: "۱۳۹۷/۷/۱۲"
+output:
+  rmdformats::readthedown
+---
+
+```{r knitr_init, echo=FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(cache=TRUE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+
+<br> <br> 
+
+##Introduction
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+در این آموزش میخواهیم نحوهی استفاده از R Markdown را شرح بدهیم. R Markdown یک ابزار برای نوشتن مستند، گزارش و حتی کتاب به فرمت pdf، HTML و … است. خود این آموزش نیز یک مستند R Markdown است. 
+</p>
+
+<br> 
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+از مزیتهای R Markdown:
+</p>
+<br>
+<ul style="list-style-type:circle; font-size:16pt; font-family:B Nazanin" dir="RTL" align="right">
+  <li> میتوان در میان گزارش، کد نیز قرار داد. بدین ترتیب لازم نیست کد و گزارش در دو فایل مجزا قرار داده شوند.  </li>
+  <br>
+  <li>  قسمت گزارش را میتوان خیلی ساده بدون نیاز به بلد بودن HTML نوشت. البته به HTML نیز میتوانید در این محیط کد بزنید.  </li>
+  <br>
+  <li>  خروجی فایل HTML شامل گزارش، کد، خروجی کدها، نمودار، عکس و … است. نیاز به فایل اضافهای نیست.  </li>
+</ul>
+
+<br> <br>
+<hr>
+<br> 
+
+---
+
+##Make a new file
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+نرمافزار R Studio را باز کنید. سپس مسیر زیر را طی کنید:
+</p>
+<br>
+File -> New File -> R Markdown… 
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+در پنجرهی باز شده یک عنوان و مؤلف انتخاب کنید. سایر موارد را تغییر ندهید. 
+</p>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+حال یک فایل R Markdown باز می شود. پسوند این فایل .Rmd است. 
+</p>
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+اگر دقت کنید میبینید که محتویات آن شامل سه بخش می شود:
+</p>
+
+
+<ol style="font-size:16pt; font-family:B Nazanin" dir="RTL" align="right">
+
+<li> بخش ابتدایی بین - - - </li>
+<li> بخش متن</li>
+<li> بخش کد </li>
+
+</ol>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+بخش اول، همان مؤلف و نامی است که هنگام ساختن فایل وارد کرده اید. به این بخش گزینه های دیگر مانند امکان داشتن فهرست و ... نیز میتوان افزود که جلوتر به بعضی از آنها میپردازیم. 
+</p>
+
+<br> <br>
+<hr>
+<br> 
+
+---
+
+##Run and build output
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای اجرای کد و تبدیل به خروجی، صرفا کافی است از نوار پایین دکمهی knit را زده و گزینه ی knit to HTML را انتخاب نمایید. 
+</p>
+
+<br> 
+
+<div align="center">
+<img  src="bar.png"  align = 'center'>
+</div>
+
+
+<br> <br>
+<hr>
+<br> 
+
+---
+
+##Text in R Markdown
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+فعلا فرض بر این است که متنهای نوشته شده به زبان انگلیسی هستند. در انتهای این بخش یک روش ساده برای نوشتن متن به فارسی پیشنهاد میدهیم. 
+</p>
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+بدنهی عادی متن را بدون هیچ علامت اضافهای میتوانید بنویسید. مانند زیر:
+</p>
+
+`This is a normal text body.`
+
+<br>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+<font color = "red">
+نکته: 
+</font>
+برای اینکه به پاراگراف بعدی بروید در انتهای خط دو تا space بزنید.
+</p>
+
+
+<br> 
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای مشخص کردن header، قبل از آن باید # بگذاریم. هرچقدر تعداد # ها بیشتر شود، اندازهی header کوچکتر میشود. 
+</p>
+<br>
+
+<pre># very big header  
+## big header  
+### small header  
+#### very small header  
+##### you get the idea   
+</pre>
+
+<br>
+
+<br> <br>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+به یاد آورید که گفتیم میتوانیم به قسمت بین - - - در ابتدای فایل گزینههایی افزود. یکی از این گزینهها قرار دادن فهرست است. فهرست با استفاده از این header ها ساخته میشود. اگر در بخش ابتدایی این قسمت را بیفزایید، headerها را در فهرست مشاهده خواهید کرد:
+</p>
+
+<br>
+
+<pre>
+output: 
+	html_document:
+		toc: true
+</pre>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+سوال: اگر قسمت بالا را به کد خود اضافه کنید میبینید که صرفا headerهای با ۳ عدد # را در فهرست نمایش میدهد. سرچ کنید که چطور میتوان این مقدار را افزایش داد.</p>
+
+<br>
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای برجسته، کجنویسی و خطزدن بدین صورت عمل کنید:
+</p>
+
+<br>
+`**bold text** or __bold text__` $\rightarrow$ **bold text**
+<br>
+`*italic text* or _italic text_` $\rightarrow$ *italic text*
+<br>
+`~~strikethrough text~~` $\rightarrow$ ~~strikethrough~~  
+<br>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای بالانویس و زیرنویس بدین صورت عمل کنید
+.</p>
+
+
+`x^2^` $\rightarrow$ x^2^  
+`x~2~` $\rightarrow$ x~2~
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای وارد کردن لینک بدین صورت عمل کنید:
+</p>
+
+`[Piazza page](https://piazza.com/class/jm3924n642t3b8?cid=19)` $\rightarrow$ [Piazza page](https://piazza.com/class/jm3924n642t3b8?cid=19)
+
+<br> 
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای ساختن لیست بدون ترتیب کافی است قبل از هر یک از موارد آن `*` بزنید. برای لیست تودرتو قبل از موارد لیست دوم `+` بزنید. اگر داخل لیست دوم باز بخواهید لیست داشته باشید، باید قبل از موارد آن `*` بزنید و ... 
+</p>
+
+
+
+
+<pre>* item 1  
+* item 1  
+* item 2  
+	  + subitem 1   
+	  + subitem 2  
+		    * sub sub item   
+			      + it goes on and on and on and …  
+</pre>
+
+* item 1  
+* item 2  
+	  + subitem 1   
+	  + subitem 2  
+        * sub sub item   
+            + it goes on and on and on and …  
+			
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+<font color = "red">
+تذکر:
+</font>
+فراموش نکنید که بعد از هر مورد لیست، دو بار space بزنید تا به خط بعد برود.
+</p>
+
+<br>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای ساختن لیست با ترتیب قبل از هر مورد شماره بزنید. 
+</p>
+
+<br>
+<pre>
+1. item 1  
+2. item 2    
+    1. subitem  
+        + subsub item
+        
+</pre>
+
+1. item 1  
+2. item 2    
+    1. subitem  
+        + subsub item
+  
+<br> <br>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای اینکه در میان خط، فرمول ریاضی با $\LaTeX$ بزنید، در دو طرف فرمول علامت `$` قرار بدهید. اگر میخواهید فرمول شما در خط جدیدی وسط صفحه نمایش داده شود، در دو طرف آن `$$` قرار دهید. برای مثال: 
+</p>
+
+<br>
+<pre>
+When $A$ and $B$ are independent events, the following is true for their intersection:  
+$$P(A \cap B) = P(A) \times P(B)$$
+</pre>
+
+When $A$ and $B$ are independent events, the following is true for their intersection:
+$$P(A \cap B) = P(A) \times P(B)$$
+
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای قرار دادن کد در میان متن، مانند نام تابع، دیتا ست و ... در دو طرف آن ` قرار دهید تا به صورت زیر در آید:
+</p>
+
+`ggplot2`
+
+<br> <br>
+<hr>
+<br>
+
+---
+
+<h2 dir = "RTL" align="right" style="font-family:B Nazanin; text-indent:30px">
+##فارسی نویسی
+</h2>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+تقریبا همهی موارد ذکر شده در بالا برای نوشتن متن، برای متون فارسی نیز جوابگو است. تنها مشکلی که وجود دارد جهت متن است. جهت متن در فارسی از راست به چپ است، ولی R Markdown متن ساده را انگلیسی فرض میکند و بدین ترتیب از چپ به راست تایپ میکند. 
+</p>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+ساده ترین راه حل این است که متون فارسی خود را داخل این عبارت قرار دهید:
+</p>
+
+<code>
+`<p dir = "RTL"></p>`
+</code>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای مثال، برای برجسته نویسی بدین صورت عمل کنید:
+</p>
+
+
+<code>
+`<p dir = "RTL"> **برجسته** </p>`
+</code>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+**برجسته**
+</p>
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+در صورتی که دچار مشکل شدید، میتوانید داخل R Markdown به HTML کد بزنید.  
+</p>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+همچنین میتوانید به فایل .Rmd این مستند نیز مراجعه کنید :)
+</p>
+
+<br> <br>
+<hr>
+<br> 
+
+---
+
+##Code chunks in R Markdown
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای قرار دادن code chunk در R Markdown نوار زیر را در بالای محیط script خود پیدا کنید. دکمهی insert را زده، گزینهی R را انتخاب کنید.
+</p>
+
+<br>
+
+<div align="center">
+<img  src="bar.png"  align = 'center'>
+</div>
+<br> <br> 
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+با این محیط مواجه میشوید:
+</p>
+
+<br> 
+
+<div align="center">
+<img  src="r.png"  align = 'center'>
+</div>
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+کدهای R خود را میتوانید در این محیط وارد کنید.
+همچنین میتواند همزمان با کد زدن، هر قطعه کد را با زدن مثلث سبز رنگ اجرا کنید. 
+</p>
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای هر قطعه کد در R میتوانید یک سری گزینه را فعال یا غیرفعال کنید. این گزینه ها را میتوانید بعد از `{r}` وارد کنید. بعضی از آنها عبارتند از:
+</p>
+
+
+
+<ol style="font-size:16pt; font-family:B Nazanin" dir="RTL" align="right">
+
+<li> eval: اینکه آیا کد اجرا شود و نتایجش چاپ شود یا نه </li>
+<li> echo: اینکه کد نمایش داده شود یا نه</li>
+<li> warning: آیا اخطار ها نمایش داده شود یا نه </li>
+<li> fig.width: پهنای نمودارهای ایجاد شده توسط این قطعه کد </li>
+<li> و ...  </li>
+</ol>
+
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای مثال به قطعه کدهای زیر دقت کنید.
+</p>
+
+<br>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+این قطعه کد اجرا نمیشود:
+</p>
+<pre>```{r, eval = F}
+x <- 10
+x
+```
+</pre>
+
+```{r, eval = F}
+x <- 10
+x
+```
+<br>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+این قطعه کد نمایش داده نمی شود:
+</p>
+<pre>```{r, echo = F}
+x <- 10
+x
+```
+</pre>
+```{r, echo = F}
+x <- 10
+x
+```
+<br>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+این قطعه کد و خروجی اش هیچ کدام نمایش داده نمی شوند.
+</p>
+<pre>```{r, include = F}
+x <- 10
+x
+```</pre>
+
+```{r, include = F}
+x <- 10
+x
+```
+
+
+<br>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+اگر در ابتدای فایل، اولین قطعه کدی که اجرا میکنید این باشد:
+</p>
+
+<pre>```{r setup, include=FALSE}
+knitr::opts_chunk$set()
+```
+</pre>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+هر چیزی بین پرانتز قرار دهید، روی همهی قطعه کدهای برنامه اجرا میشود. برای مثال:
+</p>
+
+
+<pre>```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, comment = "", error = F, message = F,
+                      warning = F, fig.width = 10, fig.height = 6, fig.align ="center")
+```
+</pre>
+
+
+
+
+<br> <br>
+<hr>
+<br> 
+
+---
+##Themes
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+یکی دیگر از گزینههایی که در بخش اول، بین - - - ها میتوان اضافه کرد، theme است. 
+</p>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+یکی از راه های اضافه کردن theme استفاده از پکیج `prettydoc` است. اگر این تکه کد را در بالای فایل خود وارد کنید میتوانید تم خود را عوض کنید. 
+</p>
+
+<pre>
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+</pre>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+برای تمهای بیشتر 
+<a href="https://yixuan.cos.name/prettydoc/themes.html">اینجا</a>
+را ببینید.
+</p>
+
+<p dir = "RTL" align="right" style="font-size:16pt; font-family:B Nazanin; text-indent:30px">
+این مستند با استفاده از پکیج `rmdformats` نوشته شده است. برای اطلاعات بیشتر در رابطه با این پکیج 
+<a href="https://github.com/juba/rmdformats">اینجا</a>
+را ببینید.
+</p>
+
