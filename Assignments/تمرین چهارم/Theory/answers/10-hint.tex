@@ -1,0 +1,21 @@
+\subsection*{الف}
+می‌توانیم برای محاسبه کران بالا بنویسیم:
+\begin{align*}
+P(X \ge \alpha n) &= P(X - np \ge \alpha n - np) \\
+&\le P(|X - np| \ge n \alpha - np) \\
+&\le \frac{Var(X)}{(n\alpha - np)^2} \\
+&= \frac{p(1 - p)}{n(\alpha - p)^2} \\
+\end{align*}
+\subsection*{ب}
+با جایگذاری 
+$
+p = \frac{1}{2}
+$
+و 
+$
+\alpha = \frac{3}{4}
+$
+داریم:
+$$
+P(X \ge \frac{3n}{4}) \le \frac{4}{n}
+$$

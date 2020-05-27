@@ -1,0 +1,24 @@
+توضیح کلی راه حل \\
+ ابتدا بدیهیاتی که از سوال قابل استنتاج است را می‌نویسیم:
+$$
+X + Y = N    , \,   N  ~ Poisson(\lambda)  , \,    X|N = Bin(N, p)
+$$
+حال با استفاده از تعریف سوال را حل می‌کنیم:
+$$
+P(X = i, Y = j) = \Sigma_{n=0}^{\infty}P(X = i, Y = j | N = n) P(N = n)
+$$
+$$
+ = P(X = i, Y = j| N = i + j) P(N = i + j)
+$$
+$$
+ = P(X = i |  N = i + j) P(N = i + j)
+$$
+$$
+= \dfrac{(i + j)! }{i! j!} p^i (1 - p) ^j e^{-\lambda} \dfrac{\lambda ^ {i + j}}{(i + j) !}
+$$
+
+$$
+=  e^{-\lambda p}\dfrac{(\lambda p) ^ i}{i!} e^{-\lambda (1 - p)}\dfrac{(\lambda (1 - p)) ^ j}{j!}
+$$
+
+

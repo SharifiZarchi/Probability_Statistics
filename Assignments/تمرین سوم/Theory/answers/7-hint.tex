@@ -1,0 +1,19 @@
+\subsection*{الف}
+$$E[X] = \sum_{i = 1}^{\infty} i P(X = i)$$
+$$ = P(X = 1)$$
+$$ + P(X = 2) + P(X = 1)$$
+$$ + P(X = 3) + P(X = 2) + P(X = 1)$$
+$$ . . .$$
+حالا اگر به صورت ستونی جمع بزنیم(یعنی حاصل جمع ستون ها را در نظر بگیریم) ، تساوی بالا به دست می آید.
+\subsection*{ب}
+می دانیم که
+$$F_X(x) = P(X \leq x) \implies 1 - F_X(x) = P(X > x)$$
+در نتیجه:
+$$\int_{0}^{\infty} (1-F_X(x))\,dx = \int_0^\infty P(X> x) dx = \int_0^\infty \int_x^\infty f_X(y) dy dx$$
+$$= \int_{0< x< y< \infty} f_X(y) d (x,y) = \int_0^\infty \int_0^y f_X(y) dx dy$$
+از طرفی می دانیم:
+$$\int_0^y f_X(y)\operatorname d x = f_X(y) \int_0^y 1\operatorname d x = y~f_X(y)$$
+بنابراین:
+$$\int_0^\infty P(X> x)dx = \int_0^\infty yf_X(y) dy = E(X \mid X\geq 0)P(X\geq 0) = E[X]$$ 
+در صورتی که $X$ همواره مثبت باشد.
+

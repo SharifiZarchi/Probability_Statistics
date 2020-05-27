@@ -1,0 +1,59 @@
+به طور کلی می‌توانیم تشخص دهیم که تابع توزیع Z تنها برای مقادیرِ
+$$
+R_Z = \{1, 2, 3, 4\}
+$$
+ناصفر است. \\
+حالا تابع توزیع Z را در هر یک از این مقادیر محاسبه می‌کنیم.\\
+برای 
+$
+z = 1
+$
+داریم:
+\begin{align*}
+P_Z(1) &= \sum\limits_{y \in R_y}^{} P_X(1 - y)P_Y(y) \\
+&= P_X(1 - 1)P_Y(1) + P_X(1 - 2)P_Y(2) \\
+&= \frac{1}{3} \times \frac{1}{3} + 0 \times \frac{2}{3}\\
+&= \frac{1}{9}
+\end{align*}
+\\
+برای 
+$ z = 2 $
+داریم:
+\begin{align*}
+P_Z(2) &= \sum\limits_{y \in R_Y}^{} P_X(2 - y)P_Y(y) \\
+&= P_X(2 - 1)P_Y(1) + P_X(2 - 2)P_Y(2) \\
+&= \frac{1}{3} \times \frac{1}{3} + \frac{1}{3}\times\frac{2}{3}\\
+&= \frac{1}{3} 
+\end{align*}
+در حالت 
+$
+z = 3
+$
+داریم:
+\begin{align*}
+P_Z(3) &= \sum\limits_{y \in R_Y} P_X(3 - y)P_Y(y) \\
+&= P_X(3 - 1)P_Y(1) + P_X(3 - 2)P_Y(2) \\
+&= \frac{1}{3}\times\frac{1}{3} + \frac{1}{3}\times\frac{2}{3}\\
+&= \frac{1}{3} 
+\end{align*}
+
+و در حالت 
+$ z = 4 $
+داریم:
+\begin{align*}
+P_Z(4) &= \sum\limits{y \in R_Y} P_X(4 - y)P_Y(y) \\
+&= P_X(4 - 1)P_Y(1) + P_X(4 - 2)P_Y(2)\\
+&= 0\times\frac{1}{4} + \frac{1}{3}\times\frac{2}{3}\\
+&= \frac{2}{9}
+\end{align*}
+بنابراین، تابع توزیع متغیر تصادفی Z عبارتست از:
+$$
+P_Z(z) =
+\begin{cases}
+\frac{1}{9} &\quad z = 1\\
+\frac{1}{3} &\quad z = 2\\
+\frac{1}{3} &\quad z = 3\\
+\frac{2}{9} &\quad z = 4\\
+0 &\quad \text{otherwise}
+\end{cases}
+$$

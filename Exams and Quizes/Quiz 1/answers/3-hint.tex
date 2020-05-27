@@ -1,0 +1,31 @@
+	\subsection*{الف}
+	
+	راه حل بخش اول 
+	\\
+	\flushleft
+	\lr{
+		$P_x(x) = \frac{e^{-\mu}\mu^{x}}{x !}$\\
+		$E[X] =\sum_{x=0}^{\infty} x \frac{e^{-\mu}\mu^{x}}{x !}$\\
+		$= \sum_{x=1}^{\infty} x \frac{e^{-\mu}\mu^{x}}{(x-1) !}$\\
+		$=\mu e^{-\mu}\sum_{x=1}^{\infty}\frac{\mu^{x-1}}{(x-1) !} $\\
+		$\implies \mu e^{-\mu}\sum_{y=0}^{\infty}\frac{\mu^y}{y !}$\\
+		$\sum_{y=0}^{\infty}\frac{\mu^y}{y!}= e^\mu$\\
+		$\implies E[X]= \mu e^{-\mu}e^{\mu} = \mu$
+	}
+	\flushright
+	\subsection*{ب}
+	راه حل بخش دوم 
+	\flushleft
+	\lr{
+		$var(X)= E[X^2] - E[X]^2$\\
+		$E[X^2]=\sum_{x=0}^{\infty} x^2 \frac{e^{-\mu}\mu^x}{x!}$
+		$=\mu e^{-\mu} \sum_{x=1}^{\infty} x \frac{\mu^{(x-1)}}{(x-1)!}$\\
+		$=\mu e^{-\mu}(\sum_{x=1}^{\infty} (x-1)\frac{\mu^{x-1}}{(x-1)!} + \sum_{x=1}^{\infty} \frac{\mu^{(x-1)}}{(x-1)!}) $\\
+		$=\mu e^{-\mu}(\mu \sum_{x=2}^{\infty} \frac{\mu^{x-2}}{(x-2)!} + \sum_{x=1}^{\infty} \frac{\mu^{(x-1)}}{(x-1)!}) $\\
+		$=\mu e^{-\mu}(\mu \sum_{i=0}^{\infty} \frac{\mu^{i}}{i!} + \sum_{j=0}^{\infty} \frac{\mu^{j}}{j!}) $\\
+		$= \mu e^{-\mu}(\mu e^{\mu} +e^{\mu}) = \mu^2 +\mu$\\
+		$\implies var(X)= \mu^2 + \mu - \mu^2 = \mu$
+	}
+	\flushright
+	%\subsection*{ج}
+	%راه حل بخش سوم
