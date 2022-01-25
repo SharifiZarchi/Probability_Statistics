@@ -1,0 +1,25 @@
+
+
+می دانیم اگر $Y = g(X)$  و ریشه های معادله $y = g(x)$ به صورت $x_1 , x_2, ...$ باشند، داریم:
+$$f_{Y}(y) = \sum \frac{f_{X}(x_{i})}{|g'(x)|}$$
+
+\subsection*{الف}
+$$Y = \ln(X) \implies X = e^{Y}$$
+$$f_{Y}(y) = \frac{\frac{\theta}{x^{\theta + 1}}}{\frac{1}{x}} = \theta x^{-\theta} \implies f_{Y}(y) = \theta e ^ {-y\theta}$$
+پس $Y$ از توزیع نمایی با پارامتر $\theta$ است و در نتبجه :
+$$ E[y] = \frac{1}{\theta}, Var(y) = \frac{1}{\theta ^ 2} $$
+\subsection*{ب}
+$$f_{W}(w) = \frac{\lambda e^{-\lambda y}}{\frac{1}{2 \sqrt{y}}}, y = w^{2} \implies 2w\lambda e^{-\lambda w^{2}} \sim weibull(\alpha = 2 , \beta = \frac{1}{\lambda})$$
+
+$$E[W] = \sqrt{\beta} \times \Gamma (1 + \frac{1}{\alpha}) = \frac{1}{\sqrt{\lambda}}\Gamma (\frac{3}{2})$$
+$$Var[W] = \beta[\Gamma(1 + \frac{2}{\alpha}) - (\Gamma(1 + \frac{1}{\alpha})) ^ {2}] = \frac{1}{\lambda}[\Gamma(2) - (\Gamma(\frac{3}{2})) ^ {2}]$$
+\subsection*{ج}
+$$f_{X}(x) = \frac{\frac{1}{\sqrt{2\pi}}e^{\frac{-z^2}{2}}}{e^{z}} = \frac{1}{\sqrt{2\pi}}e^{-\frac{(\ln x) ^ 2}{2}} \sim lognormal(\mu = 0, \sigma ^ 2 = 1)$$
+$$E[x] = exp(\mu + \frac{\sigma ^ 2}{2}) = e ^ {\frac{1}{2}}$$
+$$Var[x] = [exp(\sigma ^ 2) - 1]exp(2\mu + \sigma ^ 2) = e^2 - e$$
+\subsection*{د}
+$$x = z ^ 2 \implies z_{1} = \sqrt{x}, z_{2} = -\sqrt{x}$$
+$$f_{X}(x) = \sum \frac{\frac{1}{\sqrt{2\pi}}e ^ {\frac{-z_{i} ^ 2}{2}}}{2|z_{i}|} = 2 \times \frac{1}{2\sqrt{2\pi x}}e ^ {\frac{-x}{2}} = \frac{1}{\sqrt{2 \pi x}}x ^ {-\frac{1}{2}}e ^ {-\frac{x}{2}} \sim gamma(k = \frac{1}{2} , \theta = 2)$$
+$$E[X] = k\theta  = 1$$
+$$Var[X] = k\theta ^ 2 = 2$$
+دقت کنید که به طور کلی نیازی به در نظر گرفتن ضرایب ثابت در توزیع ها وجود ندازد ، چرا که نهایتا جمع(انتگرال) تابع توزیع چگالی برابر یک خواهد بود.

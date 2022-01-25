@@ -1,0 +1,44 @@
+
+
+\subsection*{الف}
+راه حل بخش اول \\ 
+از آنجا که متغیر تصادفی های $P_1$، $P_2$ و $P_3$ مستقل و همگی دارای توزیع نمایی هستند بنابراین خواهیم داشت: 
+$$
+P_1 = exp(2) , \,   P_2 = exp(4) , \,   P_3 = exp(8)
+$$
+ متغیر تصادفی $T$ مدت زمانی است که هر 3 لامپ روشن هستند بنابراین میتوان $T$ را بر اساس   $P_1 $ ، $P_2 $ و $P_3 $ نوشت .
+$$
+T = min(P_1, P_2, P_3)
+$$
+ حال برای محاسبه تابع توزیع چگالی از تابع توزیع تجمعی کمک میگیریم که با تعاریف بالا خواهیم داشت:
+$$ 
+P(T \ge t) = P( P_1 \geq t , P_2 \geq t, P_3 \geq t)
+$$
+$$
+P(T \geq t) = P( P_1 \geq t) P( P_2 \geq t) P( P_3 \geq t)  
+$$
+به صورت کلی برای توزیع توانی داریم: 
+$$
+P(X \geq x) = 1 - P(X \leq x) = 1 - F_X(x) = 1 - \int_{0}^{x} \lambda e^{-\lambda x} \, dx = e^{-\lambda x}
+$$
+در نتیجه 
+$  P(T \geq t) = e^{-2t}e^{-4t}e^{-8t} = e ^{-14t}
+$
+ و 
+$
+F_T(t) = 1 - e ^ {-14t}
+$ 
+و تابع توزیع چگالی یعنی همان $f_T(t) $ برابر می شود با:
+$$ f_T(t) = \frac{\partial F}{\partial t} = 14e^{-14t} .
+$$
+\subsection*{ب}
+راه حل بخش دوم \\
+$$
+E[\mid X-c \mid ] =\int_{-\infty}^ {\infty} \mid X-c \mid f_X(x) \, dx =\int_{c}^{\infty} (X-c)f_X(x) \, dx +\int_{-\infty}^{c} (c - X)f_X(x) \, dx = g(c)
+$$
+$$
+ \frac{\partial g}{\partial c} = 0 \implies \int_{c}^{\infty}(−1)f_X(x) \, dx + \int_{-\infty}^{c}(1)f(X) \, dx = 0 \implies \int_{c}^{\infty} f_X(x)=\int_{-\infty}^{c}f_X(x)
+$$
+$$
+ \implies c = median(f(X))
+$$

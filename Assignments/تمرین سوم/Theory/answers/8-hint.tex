@@ -1,0 +1,9 @@
+
+متغیر تصادفی $X_k$ را تعداد توپ های متمایز پس از بزداشتن $k$ توپ از ظرف در نظر میگیریم. با دانستن $X_k$ احتمال برداشتن توپ جدید در مرتبه $k+1$ام  برابر با $\frac{n-X_k}{n}$ میباشد پس داریم\\
+\centerline{$E(N_{k+1}\mid N_k)=N_k+\frac{n-N_k}{n}$}
+بنابراین با توجه به این که $E(N_0) =0$ \\
+\centerline{$\mathrm E(N_{k+1})=\mathrm E(N_k)+\frac{n-\mathrm E(N_k)}n=1+a_n\mathrm E(N_k)$}
+به ازای هر $k \geq 0$\\
+\centerline{$a_n=1-\frac1n$ => $\mathrm E(N_k)=\frac{1-a_n^k}{1-a_n}$}
+و یا به طور معادل\\
+\centerline{$\mathrm E(N_k)=n\,\frac{n^k-(n-1)^k}{n^{k}}=\sum\limits_{i=0}^{k-1}(-1)^{i}{k\choose i+1}\frac1{n^i}$}
