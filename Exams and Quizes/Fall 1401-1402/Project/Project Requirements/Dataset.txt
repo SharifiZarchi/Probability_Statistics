@@ -1,0 +1,7 @@
+"California housing dataset" can be fetched from internet using scikit-learn.
+For more information:
+The following website presents the dataset known as the "California housing dataset"
+https://inria.github.io/scikit-learn-mooc/python_scripts/datasets_california_housing.html
+
+You can learn about Karate Club dataset from the following website:
+https://networkx.org/documentation/stable/auto_examples/graph/plot_karate_club.html
