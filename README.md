@@ -1,7 +1,10 @@
-# Probability_Statistics
+# آمار و احتمال مهندسی
+محتوای دوره‌ی آمار و احتمال مهندسی. این دوره برای دانشجویان کارشناسی مهندسی کامپیوتر دانشگاه صنعتی شریف ارائه گردیده است. 
 
-A course for B.Sc. students, Computer Engineering Department, Sharif University of Technology.
+برای دیدن محتوای ژوپیتر (که به شما امکان دیدن درس‌نامه و کدزدن در یک صفحه‌ی وب را می‌دهد) لازم است ابتدا [از این صفحه](https://jupyter.org/install) ژوپیتر را در کامپیوتر خود نصب کنید. محتوای ژوپیتر این دوره به زبان برنامه‌نویسی R است
 
-The course is instructed in Persian (Farsi) language.
+برای دسترسی به ویدئوهای این دوره می‌توانید به یکی از دو آدرس زیر بروید:
+* [مکتب‌خونه](https://maktabkhooneh.org/course/آمار-احتمال-مهندسی-mk627/)
+* [درس‌افزار دانشگاه صنعتی شریف](https://ocw.sharif.edu/course/id/269)
 
-All course materials (Slides, Jupyter Notebooks, Theory and Practical Assignments, Projects, etc.) are freely available under Creative Commons BY license.
+تمامی محتوای این دوره و ویدئوها رایگان است. شما می‌توانید به دل‌خواه خود آن را تغییر دهید و بازنشر کنید. پیشنهاد می‌شود در هنگام بازنشر به این نشانی پیوند دهید.
